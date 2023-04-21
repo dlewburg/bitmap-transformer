@@ -17,11 +17,7 @@ class AppTest {
     @Test
     public void testApplyTransform() throws IOException {
         Bitmap bitmap = null;
-        try{
-            bitmap = new Bitmap("/Users/dashalewis/projects/courses/code-401-java/bitmap/bitmap-transformer/baldy-8bit.bmp");
-        } catch(IOException e){
-            System.out.println("Error Loading Test Image: " + e.getMessage());
-        }
+        bitmap = new Bitmap("baldy-8bit.bmp");
 
         bitmap.applyTransform("invert");
 

@@ -91,6 +91,6 @@ public class App {
             System.err.println("Error: " + e.getMessage());
         }
 
-        new Bitmap("/baldy-8bit.bmp");
+        new Bitmap("baldy-8bit.bmp");
     }
 }
