@@ -1,5 +1,42 @@
 # bitmap-transformer
 
+Bitmap Transformer is a simple Java application that allows users to apply various transformations to bitmap images.
+
+## Features
+The following transformations can be applied:
+
+* Invert colors
+* Convert to black and white
+* Rotate the image by 90 degrees
+
+* Usage
+There are two ways to interact with the application:
+
+Building and Running with Gradle
+You can also build and run the application using Gradle:
+
+#### Build the application:
+```bash
+./gradlew build
+```
+#### Run the application in interactive mode:
+```bash
+./gradlew run
+```
+
+#### Run the application with command-line arguments:
+```bash
+./gradlew run --args 'input output transform'
+```
+Replace input, output, and transform with the appropriate values.
+
+### Dependencies
+Java JDK 11 or later
+Gradle 7.0 or later
+
+### License
+This project is licensed under the MIT License.
+
 1. Gather User input:
    - [x] a. Input file path
    - [x] b. Output file path
