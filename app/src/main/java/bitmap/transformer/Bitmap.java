@@ -36,7 +36,6 @@ public class Bitmap {
     }
 
     // Invert colors of image
-    // Invert colors of image
     private void invert() {
         int width = image.getWidth();
         int height = image.getHeight();
@@ -51,7 +50,6 @@ public class Bitmap {
         }
     }
 
-    // Convert image to black and white
     // Convert image to black and white
     private void blackAndWhite() {
         int width = image.getWidth();
@@ -80,9 +78,6 @@ public class Bitmap {
                 result.setRGB(newX, newY, image.getRGB(x, y));
             }
         }
-
         image = result;
     }
-
-
 }
