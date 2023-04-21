@@ -4,11 +4,35 @@
 package bitmap.transformer;
 
 import org.junit.jupiter.api.Test;
+
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
     @Test void appHasAGreeting() {
         App classUnderTest = new App();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+    }
+
+    @Test public void testInvert() throws IOException {
+        // Load the test image
+        BufferedImage inputImage = ImageIO.read(new File("test.bmp"));
+
+        // Create a new Bitmap instance and set its image to the test image
+        Bitmap bitmap = new Bitmap();
+        bitmap.setImage(inputImage);
+
+        // Apply the invert transform
+        bitmap.applyTransform("invert");
+
+        // Get the output image and compare it to the expected output image
+        BufferedImage expectedOutputImage = ImageIO.read(new File("expected_invert.bmp"));
+        BufferedImage actualOutputImage = bitmap.getImage();
+
+        assertTrue(imagesEqual(expectedOutputImage, actualOutputImage));
     }
 }

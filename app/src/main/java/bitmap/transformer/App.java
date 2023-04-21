@@ -7,24 +7,25 @@ import java.nio.file.*;
 import java.util.*;
 import java.io.*;
 import javax.imageio.*;
-import java.awt.image.*
+import java.awt.image.*;
 
 
 
 public class App {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         // Get Bitmap Image File Path
         Path baldPic = Paths.get("baldy-8bit.bmp");
         System.out.println(baldPic.toAbsolutePath());
 
-        BufferedImage img = null;        
+        //Use File Path to Read Bitmap Image with Buffered Image and ImageIO
+        BufferedImage img = null;
         try {
-             img = ImageIO.read(new File(baldPic.toUri());
-
-        } catch (IOException e){
-            
+            img = ImageIO.read(new File(baldPic.toUri()));
+        } catch (IOException e) {
+            System.out.println("Cannot Get Image: " + e.getMessage());
         }
+
 
         // 1. Gather user input
         if (args.length < 3) {
@@ -51,40 +52,6 @@ public class App {
             // 6b. Log an error message if something goes wron
             System.err.println("Error: " + e.getMessage());
         }
-        
-    public static void readBufferedBitmapImage {
-        BufferedImage img = null;
-    
-    }
-        BufferedImage img = null;
-                try {
-        BufferedImage img = null;
-                     img = ImageIO.read(new File(baldPic.toUri()));
-        BufferedImage img = null;
-        try {
-                     img = ImageIO.read(new File(baldPic.toUri()));
-                     img = ImageIO.read(new File(baldPic.toUri()));
-                }catch (IOException e) {
-                }catch (IOException e) {
-                    System.out.println("Cannot Get Image: " + e.getMessage());
-                    System.out.println("Cannot Get Image: " + e.getMessage());
-    }
-    System.out.println("Cannot Get Image: " + e.getMessage());
-                }catch (IOException e) {
-             img = ImageIO.read(new File(baldPic.toUri());
 
-        } catch (IOException e){    
-                
-
-        }
-        BufferedImage img = null;
-                     img = ImageIO.read(new File(baldPic.toUri()));
-        
-                }catch (IOException e){    System.out.println("ERROR Cannot get Image: " + e.getMessage());
-                }    System.out.println("Cannot Get Image: " + e.getMessage());
-                }
-            }
-    public void writeToFile(String filename) throws IOException {
-    
-    }    
+    }
 }
