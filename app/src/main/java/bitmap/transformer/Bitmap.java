@@ -1,9 +1,11 @@
 package bitmap.transformer;
 
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import java.util.Random;
 
 public class Bitmap {
     private BufferedImage image;
@@ -19,8 +21,8 @@ public class Bitmap {
             invert();
         } else if ("blackAndWhite".equals(transformName)) {
             blackAndWhite();
-        } else if ("randomize".equals(transformName)) {
-            randomize();
+        } else if ("rotate".equals(transformName)) {
+            rotate();
         } else {
             System.err.println("Error: Unknown transform name: " + transformName);
         }
@@ -32,17 +34,53 @@ public class Bitmap {
     }
 
     // Invert colors of image
+    // Invert colors of image
     private void invert() {
-        // TODO: implement this method
+        int width = image.getWidth();
+        int height = image.getHeight();
+
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                int rgba = image.getRGB(x, y);
+                Color col = new Color(rgba, true);
+                col = new Color(255 - col.getRed(), 255 - col.getGreen(), 255 - col.getBlue());
+                image.setRGB(x, y, col.getRGB());
+            }
+        }
     }
 
     // Convert image to black and white
+    // Convert image to black and white
     private void blackAndWhite() {
-        // TODO: implement this method
+        int width = image.getWidth();
+        int height = image.getHeight();
+
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                int rgba = image.getRGB(x, y);
+                Color col = new Color(rgba, true);
+                int gray = (col.getRed() + col.getGreen() + col.getBlue()) / 3;
+                col = new Color(gray, gray, gray);
+                image.setRGB(x, y, col.getRGB());
+            }
+        }
     }
 
-    // Randomize colors of image
-    private void randomize() {
-        // TODO: implement this method
+    private void rotate() {
+        int width = image.getWidth();
+        int height = image.getHeight();
+        BufferedImage result = new BufferedImage(height, width, image.getType());
+
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                int newX = height - y - 1;
+                int newY = x;
+                result.setRGB(newX, newY, image.getRGB(x, y));
+            }
+        }
+
+        image = result;
     }
+
+
 }
