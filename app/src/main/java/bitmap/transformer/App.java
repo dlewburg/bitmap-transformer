@@ -12,7 +12,7 @@ import java.awt.image.*;
 
 
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         // Get Bitmap Image File Path
         Path baldPic = Paths.get("baldy-8bit.bmp");
@@ -53,5 +53,6 @@ public class App {
             System.err.println("Error: " + e.getMessage());
         }
 
+        new Bitmap("/baldy-8bit.bmp");
     }
 }

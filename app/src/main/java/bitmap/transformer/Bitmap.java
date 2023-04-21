@@ -10,7 +10,9 @@ public class Bitmap {
 
     // Constructor reads the image file and stores it in a BufferedImage
     public Bitmap(String inputFilePath) throws IOException {
-        image = ImageIO.read(new File(inputFilePath));
+        File name = new File(inputFilePath);
+        image = ImageIO.read(name);
+        return;
     }
 
     // Apply the specified transform to the image
