@@ -86,5 +86,7 @@ public class App {
             // Log an error message if something goes wrong
             System.err.println("Error: " + e.getMessage());
         }
+
+        new Bitmap("/baldy-8bit.bmp");
     }
 }
